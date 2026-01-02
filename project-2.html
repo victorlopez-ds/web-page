@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitch Analysis | Víctor López</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#a855f7", // Purple for Twitch
+                        "primary-dark": "#7e22ce",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0a0a0a",
+                        "surface-dark": "#121212",
+                        "surface-highlight": "#1e1e1e",
+                        "text-secondary": "#a1a1aa",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .glass {
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-dark text-white font-display antialiased overflow-x-hidden selection:bg-primary selection:text-white">
+    <div class="fixed inset-0 z-0 pointer-events-none bg-grid-pattern"></div>
+    <div class="relative z-10 flex flex-col min-h-screen">
+
+        <!-- Navbar -->
+        <header class="fixed top-0 w-full z-50 glass border-b border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <a href="code.html" class="flex items-center gap-2 group">
+                        <div
+                            class="size-8 rounded-lg bg-white/5 flex items-center justify-center text-text-secondary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined">arrow_back</span>
+                        </div>
+                        <span class="text-white text-sm font-medium">Volver al Portafolio</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-grow pt-24 pb-20 px-4">
+            <article class="max-w-4xl mx-auto space-y-12">
+
+                <!-- Header -->
+                <div class="space-y-6 text-center">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-medium">
+                        <span class="material-symbols-outlined text-sm">analytics</span> Data Analysis
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white">
+                        Twitch: Análisis Multivariante
+                    </h1>
+                    <p class="text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
+                        Desentrañando las métricas de éxito de los 1000 canales más influyentes mediante estadística
+                        avanzada.
+                    </p>
+                </div>
+
+                <!-- Hero Image / Visual -->
+                <!-- Hero Image / Visual -->
+                <div class="relative rounded-2xl overflow-hidden bg-surface-dark border border-white/10 group">
+                    <img src="assets/infografia_twitch.png" alt="Infografía del proyecto Twitch Analysis"
+                        class="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity">
+                </div>
+
+                <!-- Content Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+                    <!-- Main Description -->
+                    <div class="md:col-span-2 space-y-8">
+                        <section>
+                            <h2 class="text-2xl font-bold text-white mb-4">Sobre el Proyecto</h2>
+                            <div class="prose prose-invert text-text-secondary leading-relaxed space-y-4">
+                                <p>
+                                    Este estudio profundiza en el ecosistema de Twitch durante el periodo 2019-2020, un
+                                    momento clave en el crecimiento del streaming. El objetivo fue identificar qué
+                                    factores estadísticos diferenciaban a los canales "Top" del resto y cómo se
+                                    agrupaban los creadores de contenido según sus métricas de rendimiento.
+                                </p>
+                                <p>
+                                    Utilizando el lenguaje <strong>R</strong> y librerías especializadas en minería de
+                                    datos como <strong>FactoMineR</strong>, se aplicaron técnicas de reducción de
+                                    dimensionalidad y clustering para descubrir patrones ocultos en los datos de
+                                    audiencia, tiempo de emisión y crecimiento de seguidores.
+                                </p>
+                            </div>
+                        </section>
+
+                        <section>
+                            <h2 class="text-2xl font-bold text-white mb-4">Metodología y Hallazgos</h2>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-3 text-text-secondary">
+                                    <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                                    <span><strong>Análisis de Componentes Principales (PCA):</strong> Reducción de 10+
+                                        variables a 2 dimensiones principales que explican la varianza del éxito
+                                        (Audiencia vs. Dedicación).</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-text-secondary">
+                                    <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                                    <span><strong>Clustering Jerárquico:</strong> Segmentación de streamers en grupos
+                                        definidos (ej. "Viral Hit", "Consistent Grinder").</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-text-secondary">
+                                    <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                                    <span>Identificación de correlaciones no lineales entre el tiempo de streaming y la
+                                        ganancia de seguidores.</span>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+
+                    <!-- Sidebar Info -->
+                    <div class="space-y-8">
+                        <div
+                            class="p-6 rounded-xl bg-surface-dark border border-white/5 hover:border-white/10 transition-colors">
+                            <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Tecnologías</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 py-1 rounded bg-white/5 border border-white/10 text-xs text-secondary hover:text-white transition-colors">R
+                                    Language</span>
+                                <span
+                                    class="px-3 py-1 rounded bg-white/5 border border-white/10 text-xs text-secondary hover:text-white transition-colors">Estadística</span>
+                                <span
+                                    class="px-3 py-1 rounded bg-white/5 border border-white/10 text-xs text-secondary hover:text-white transition-colors">Tidyverse</span>
+                                <span
+                                    class="px-3 py-1 rounded bg-white/5 border border-white/10 text-xs text-secondary hover:text-white transition-colors">FactoMineR</span>
+                                <span
+                                    class="px-3 py-1 rounded bg-white/5 border border-white/10 text-xs text-secondary hover:text-white transition-colors">ggplot2</span>
+                            </div>
+                        </div>
+
+                        <div class="p-6 rounded-xl bg-primary/10 border border-primary/20">
+                            <h3 class="text-lg font-bold text-white mb-2">Ver Código Fuente</h3>
+                            <p class="text-sm text-text-secondary mb-4">Descarga el reporte completo y el código en R.
+                            </p>
+                            <a href="https://github.com/victorlopez-ds/twitch-multivariate-statistical-analysis"
+                                target="_blank"
+                                class="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-primary hover:bg-primary-dark text-white font-semibold transition-all">
+                                <span class="material-symbols-outlined text-sm">code</span>
+                                Ir al Repositorio
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </article>
+        </main>
+
+        <footer class="border-t border-white/5 py-8 text-center text-text-secondary text-sm">
+            © 2024 Víctor López. Construido con Tailwind CSS.
+        </footer>
+    </div>
+</body>
+
+</html>

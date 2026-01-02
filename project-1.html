@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Push-Up Video Classification | Víctor López</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#066bf9",
+                        "primary-dark": "#0558ce",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0a0a0a",
+                        "surface-dark": "#121212",
+                        "surface-highlight": "#1e1e1e",
+                        "text-secondary": "#a1a1aa",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .glass {
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-dark text-white font-display antialiased overflow-x-hidden selection:bg-primary selection:text-white">
+    <div class="fixed inset-0 z-0 pointer-events-none bg-grid-pattern"></div>
+    <div class="relative z-10 flex flex-col min-h-screen">
+
+        <!-- Navbar -->
+        <header class="fixed top-0 w-full z-50 glass border-b border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <a href="code.html" class="flex items-center gap-2 group">
+                        <div
+                            class="size-8 rounded-lg bg-white/5 flex items-center justify-center text-text-secondary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined">arrow_back</span>
+                        </div>
+                        <span class="text-white text-sm font-medium">Volver al Portafolio</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-grow pt-24 pb-20 px-4">
+            <article class="max-w-4xl mx-auto space-y-12">
+
+                <!-- Header -->
+                <div class="space-y-6 text-center">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-medium">
+                        <span class="material-symbols-outlined text-sm">visibility</span> Computer Vision
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white">
+                        Push-Up Video Classification
+                    </h1>
+                    <p class="text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
+                        Sistema inteligente de corrección de técnica deportiva utilizando Deep Learning y redes de
+                        grafos espacio-temporales (ST-GCN).
+                    </p>
+                </div>
+
+                <!-- Hero Image / Visual -->
+                <!-- Hero Image / Visual -->
+                <div class="relative rounded-2xl overflow-hidden bg-surface-dark border border-white/10 group">
+                    <img src="assets/infografia_push_up_project.png"
+                        alt="Infografía del proyecto Push-Up Classification"
+                        class="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity">
+                </div>
+
+                <!-- Content Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+                    <!-- Main Description -->
+                    <div class="md:col-span-2 space-y-8">
+                        <section>
+                            <h2 class="text-2xl font-bold text-white mb-4">Sobre el Proyecto</h2>
+                            <div class="prose prose-invert text-text-secondary leading-relaxed space-y-4">
+                                <p>
+                                    Este proyecto explora la intersección entre el deporte y la inteligencia artificial
+                                    avanzada. El objetivo principal fue desarrollar un sistema capaz de analizar vídeos
+                                    de usuarios realizando flexiones (push-ups) y determinar automáticamente si la
+                                    técnica empleada es correcta o incorrecta.
+                                </p>
+                                <p>
+                                    La solución no se limita a un simple análisis frame a frame, sino que entiende la
+                                    <strong>dinámica temporal</strong> del movimiento. Utilizando
+                                    <strong>MediaPipe</strong> para la extracción precisa de puntos clave del cuerpo
+                                    (pose estimation) y redes <strong>Bi-LSTM</strong> junto con
+                                    <strong>ST-GCN</strong>, el modelo logra capturar dependencias espaciales y
+                                    temporales complejas.
+                                </p>
+                            </div>
+                        </section>
+
+                        <section>
+                            <h2 class="text-2xl font-bold text-white mb-4">Características Clave</h2>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-3 text-text-secondary">
+                                    <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                                    <span>Extracción de pose corporal en tiempo real con más de 30 landmarks.</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-text-secondary">
+                                    <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                                    <span>Modelado de relaciones espaciales entre articulaciones y temporales entre
+                                        frames (ST-GCN).</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-text-secondary">
+                                    <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                                    <span>Alta precisión en la distinción de errores técnicos sutiles.</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-text-secondary">
+                                    <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                                    <span>Pipeline optimizado para inferencia en CPU utilizando ONNX (opcional).</span>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+
+                    <!-- Sidebar Info -->
+                    <div class="space-y-8">
+                        <div
+                            class="p-6 rounded-xl bg-surface-dark border border-white/5 hover:border-white/10 transition-colors">
+                            <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Tecnologías</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 py-1 rounded bg-white/5 border border-white/10 text-xs text-secondary hover:text-white transition-colors">Python</span>
+                                <span
+                                    class="px-3 py-1 rounded bg-white/5 border border-white/10 text-xs text-secondary hover:text-white transition-colors">PyTorch</span>
+                                <span
+                                    class="px-3 py-1 rounded bg-white/5 border border-white/10 text-xs text-secondary hover:text-white transition-colors">MediaPipe</span>
+                                <span
+                                    class="px-3 py-1 rounded bg-white/5 border border-white/10 text-xs text-secondary hover:text-white transition-colors">ST-GCN</span>
+                                <span
+                                    class="px-3 py-1 rounded bg-white/5 border border-white/10 text-xs text-secondary hover:text-white transition-colors">Bi-LSTM</span>
+                            </div>
+                        </div>
+
+                        <div class="p-6 rounded-xl bg-primary/10 border border-primary/20">
+                            <h3 class="text-lg font-bold text-white mb-2">Ver Código Fuente</h3>
+                            <p class="text-sm text-text-secondary mb-4">Explora el código, los notebooks y la
+                                documentación completa en GitHub.</p>
+                            <a href="https://github.com/victorlopez-ds/push-up-video-classification" target="_blank"
+                                class="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-primary hover:bg-primary-dark text-white font-semibold transition-all">
+                                <span class="material-symbols-outlined text-sm">code</span>
+                                Ir al Repositorio
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </article>
+        </main>
+
+        <footer class="border-t border-white/5 py-8 text-center text-text-secondary text-sm">
+            © 2024 Víctor López. Construido con Tailwind CSS.
+        </footer>
+    </div>
+</body>
+
+</html>

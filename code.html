@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Víctor López | Data Scientist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#066bf9",
+                        "primary-dark": "#0558ce",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0a0a0a", // Deep gray, almost black
+                        "surface-dark": "#121212", // Slightly lighter for cards
+                        "surface-highlight": "#1e1e1e",
+                        "text-secondary": "#a1a1aa",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.375rem",
+                        "md": "0.375rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Glassmorphism utilities */
+        .glass {
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .glass-card {
+            background: rgba(30, 30, 30, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+        }
+
+        /* Subtle grid background pattern */
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-dark text-white font-display antialiased overflow-x-hidden selection:bg-primary selection:text-white">
+    <!-- Background Decoration -->
+    <div class="fixed inset-0 z-0 pointer-events-none bg-grid-pattern"></div>
+    <div
+        class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none z-0">
+    </div>
+    <div class="relative z-10 flex flex-col min-h-screen">
+        <!-- Navbar -->
+        <header class="fixed top-0 w-full z-50 glass border-b border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <!-- Logo -->
+                    <div class="flex items-center gap-2">
+                        <div class="size-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
+                            <span class="material-symbols-outlined" style="font-size: 20px;">data_object</span>
+                        </div>
+                        <span class="text-white text-lg font-bold tracking-tight">Víctor López</span>
+                    </div>
+                    <!-- Desktop Nav -->
+                    <nav class="hidden md:flex gap-8">
+                        <a class="text-sm font-medium text-text-secondary hover:text-white transition-colors"
+                            href="#proyectos">Proyectos</a>
+                        <a class="text-sm font-medium text-text-secondary hover:text-white transition-colors"
+                            href="#skills">Habilidades</a>
+                        <a class="text-sm font-medium text-text-secondary hover:text-white transition-colors"
+                            href="#sobre-mi">Sobre Mí</a>
+                        <a class="text-sm font-medium text-text-secondary hover:text-white transition-colors"
+                            href="#contacto">Contacto</a>
+                    </nav>
+                    <!-- Mobile Menu Button (Icon only for simplicity in this demo) -->
+                    <button class="md:hidden text-white p-2">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                    <!-- CTA -->
+                    <div class="hidden md:block">
+                        <a class="flex items-center gap-2 bg-surface-highlight hover:bg-white/10 text-white text-xs font-semibold py-2 px-4 rounded-full border border-white/10 transition-all"
+                            href="mailto:victorlopez.workspace@gmail.com">
+                            <span>Disponible / Contactar</span>
+                            <div class="size-2 rounded-full bg-green-500 animate-pulse"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content -->
+        <main class="flex-grow pt-16">
+            <!-- Hero Section -->
+            <section class="relative py-20 lg:py-32 flex flex-col items-center justify-center text-center px-4">
+                <div class="max-w-4xl mx-auto flex flex-col items-center gap-6">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-medium mb-2">
+                        <span class="relative flex h-2 w-2">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                        </span>
+                        Estudiante de 4º curso
+                    </div>
+                    <h1
+                        class="text-5xl md:text-7xl font-black tracking-tight leading-[1.1] text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60">
+                        Víctor López Martínez
+                    </h1>
+                    <p class="text-text-secondary text-lg md:text-xl max-w-2xl leading-relaxed">
+                        Científico de Datos. Transformando datos en decisiones estratégicas
+                        y valor de negocio.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4 mt-4">
+                        <a class="inline-flex items-center justify-center h-12 px-6 rounded-lg bg-surface-highlight hover:bg-white/10 border border-white/10 text-white font-medium transition-all"
+                            href="assets/cv_victor.pdf" download>
+                            <span class="material-symbols-outlined mr-2 text-sm">download</span> Descargar CV
+                        </a>
+                        <a class="inline-flex items-center justify-center h-12 px-6 rounded-lg bg-primary hover:bg-primary-dark text-white font-semibold transition-all shadow-[0_0_20px_-5px_rgba(6,107,249,0.5)]"
+                            href="mailto:victorlopez.workspace@gmail.com">
+                            Contactar
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- Projects Section (Bento Grid) -->
+            <section class="py-20 px-4 md:px-8 max-w-7xl mx-auto" id="proyectos">
+                <div class="flex flex-col gap-2 mb-12">
+                    <h2 class="text-3xl font-bold text-white tracking-tight">Proyectos Destacados</h2>
+                    <p class="text-text-secondary">Una selección de mis trabajos más recientes en análisis y modelado.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(300px,auto)]">
+                    <!-- Project 1: Large Featured - Push-Up Video Classification -->
+                    <div
+                        class="group md:col-span-2 relative overflow-hidden rounded-xl bg-surface-dark border border-white/5 hover:border-primary/50 transition-all duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-10">
+                        </div>
+                        <!-- Using a gradient fallback since specific image isn't available -->
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-60"
+                            style='background-image: linear-gradient(135deg, #1e3a8a 0%, #000000 100%);'>
+                            <div class="absolute inset-0 flex items-center justify-center opacity-20">
+                                <span class="material-symbols-outlined text-9xl text-white">fitness_center</span>
+                            </div>
+                        </div>
+
+                        <div class="relative z-20 flex flex-col h-full justify-end p-8 gap-4">
+                            <div class="flex gap-2">
+                                <span
+                                    class="px-2 py-1 text-xs font-medium bg-primary/20 text-primary-100 rounded border border-primary/20 backdrop-blur-md">Python</span>
+                                <span
+                                    class="px-2 py-1 text-xs font-medium bg-white/10 text-white rounded border border-white/10 backdrop-blur-md">ST-GCN</span>
+                                <span
+                                    class="px-2 py-1 text-xs font-medium bg-white/10 text-white rounded border border-white/10 backdrop-blur-md">Deep
+                                    Learning</span>
+                            </div>
+                            <div>
+                                <h3
+                                    class="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                                    Push-Up Video Classification</h3>
+                                <p class="text-gray-300 text-sm md:text-base max-w-lg">
+                                    Análisis biomecánico mediante Deep Learning. Clasificación de técnica de ejercicios
+                                    utilizando redes de grafos espacio-temporales (ST-GCN) sobre coordenadas vectoriales
+                                    extraídas de vídeo.
+                                </p>
+                                <a class="mt-4 inline-flex items-center text-sm font-semibold text-white hover:text-primary transition-colors"
+                                    href="project-1.html">
+                                    Ver Caso de Estudio <span
+                                        class="material-symbols-outlined text-base ml-1">arrow_forward</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Tall - Twitch Analysis -->
+                    <div
+                        class="group md:col-span-1 relative overflow-hidden rounded-xl bg-surface-dark border border-white/5 hover:border-primary/50 transition-all duration-300 flex flex-col">
+                        <div class="h-48 overflow-hidden relative bg-purple-900/20">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-6xl text-purple-500/30">live_tv</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-1 bg-surface-dark">
+                            <div class="flex gap-2 mb-4 flex-wrap">
+                                <span
+                                    class="px-2 py-1 text-xs font-medium bg-primary/20 text-primary-100 rounded border border-primary/20">R
+                                    Language</span>
+                                <span
+                                    class="px-2 py-1 text-xs font-medium bg-white/10 text-white rounded border border-white/10">Estadística</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                                Twitch: Análisis Multivariante</h3>
+                            <p class="text-text-secondary text-sm flex-grow">
+                                Estudio estadístico de los 1000 canales principales. Identificación de patrones de
+                                éxito, audiencia y tendencias de crecimiento.
+                            </p>
+                            <a class="mt-4 inline-flex items-center text-sm font-semibold text-white hover:text-primary transition-colors"
+                                href="project-2.html">
+                                Ver Detalles <span class="material-symbols-outlined text-base ml-1">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Standard - Customer Churn -->
+                    <div
+                        class="group md:col-span-1 relative overflow-hidden rounded-xl bg-surface-dark border border-white/5 hover:border-primary/50 transition-all duration-300 flex flex-col">
+                        <div class="p-6 flex flex-col h-full">
+                            <div class="flex items-center justify-between mb-6">
+                                <div
+                                    class="size-10 rounded-lg bg-surface-highlight flex items-center justify-center text-white border border-white/10">
+                                    <span class="material-symbols-outlined">trending_down</span>
+                                </div>
+                                <a href="project-3.html">
+                                    <span
+                                        class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors">open_in_new</span>
+                                </a>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                                Customer Churn con PySpark</h3>
+                            <p class="text-text-secondary text-sm mb-4 flex-grow">
+                                Predicción de abandono de clientes utilizando Big Data. Modelado distribuido para
+                                identificar factores de riesgo y retención.
+                            </p>
+                            <div class="flex gap-2 flex-wrap mt-auto">
+                                <span
+                                    class="px-2 py-1 text-xs font-medium bg-primary/20 text-primary-100 rounded border border-primary/20">PySpark</span>
+                                <span
+                                    class="px-2 py-1 text-xs font-medium bg-white/10 text-white rounded border border-white/10">Big
+                                    Data</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GitHub CTA Card -->
+                    <div
+                        class="group md:col-span-2 relative overflow-hidden rounded-xl bg-gradient-to-br from-surface-highlight to-surface-dark border border-white/5 p-6 flex items-center justify-center text-center">
+                        <div class="flex flex-col items-center gap-3">
+                            <div
+                                class="size-12 rounded-full bg-white/5 flex items-center justify-center text-text-secondary mb-2 group-hover:bg-primary/20 group-hover:text-primary transition-colors">
+                                <span class="material-symbols-outlined">folder_open</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white">Ver repositorio completo</h3>
+                            <p class="text-text-secondary text-sm max-w-xs">Explora más proyectos de Data Science y
+                                contribuciones en mi GitHub.</p>
+                            <a class="mt-2 text-sm font-semibold text-primary hover:text-primary-dark transition-colors"
+                                href="https://github.com/victorlopez-ds" target="_blank">github.com/victorlopez-ds</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Hitos Section (Milestones) -->
+            <section class="py-20 px-4 md:px-8 max-w-7xl mx-auto" id="hitos">
+                <div class="flex flex-col gap-2 mb-12">
+                    <h2 class="text-3xl font-bold text-white tracking-tight">Hitos & Logros</h2>
+                    <p class="text-text-secondary">Reconocimientos al espíritu innovador.</p>
+                </div>
+                <!-- Anima Project Card -->
+                <div
+                    class="relative rounded-2xl bg-surface-dark border border-white/5 overflow-hidden group hover:border-primary/50 transition-all duration-300">
+                    <div
+                        class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-primary/10 rounded-full blur-3xl group-hover:bg-primary/20 transition-all">
+                    </div>
+
+                    <div class="grid md:grid-cols-12 gap-8 p-8 items-center relative z-10">
+                        <div class="md:col-span-8 flex flex-col gap-4">
+                            <div
+                                class="inline-flex items-center gap-2 text-primary text-sm font-semibold tracking-wide uppercase">
+                                <span class="material-symbols-outlined text-lg">emoji_events</span>
+                                Finalista Concurso Emprendimiento
+                            </div>
+                            <h3 class="text-3xl font-bold text-white">Proyecto Anima</h3>
+                            <p class="text-text-secondary text-lg leading-relaxed max-w-2xl">
+                                Plataforma innovadora seleccionada como finalista. Una solución tecnológica diseñada
+                                para conectar personas y fomentar la colaboración.
+                            </p>
+                            <div class="flex flex-wrap gap-4 mt-2">
+                                <a class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-white text-sm font-medium transition-colors border border-white/10"
+                                    href="assets/Anima - Idea de emprendimiento.pdf" target="_blank">
+                                    <span class="material-symbols-outlined text-base">description</span>
+                                    Ver Idea de Proyecto
+                                </a>
+                                <a class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-white text-sm font-medium transition-colors border border-white/10"
+                                    href="assets/concurso_emprendimiento_diploma.pdf" target="_blank">
+                                    <span class="material-symbols-outlined text-base">workspace_premium</span>
+                                    Ver Diploma
+                                </a>
+                            </div>
+                        </div>
+                        <div class="md:col-span-4 flex justify-center md:justify-end">
+                            <div
+                                class="size-32 rounded-full bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center text-white shadow-2xl shadow-primary/20">
+                                <span class="material-symbols-outlined text-6xl">lightbulb</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Tech Stack Section -->
+            <section class="py-20 bg-surface-dark/50 border-y border-white/5" id="skills">
+                <div class="max-w-7xl mx-auto px-4 md:px-8">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-12">
+                        <h2 class="text-3xl font-bold text-white tracking-tight">Tech Stack &amp; Tools</h2>
+                        <p class="text-text-secondary max-w-md text-sm md:text-right">
+                            Herramientas que utilizo diariamente para limpieza, análisis, modelado y visualización de
+                            datos.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                        <!-- Tech Item -->
+                        <div
+                            class="flex flex-col items-center justify-center p-6 bg-background-dark rounded-lg border border-white/5 hover:border-primary/30 hover:bg-white/5 transition-all group">
+                            <span
+                                class="material-symbols-outlined text-4xl mb-3 text-gray-500 group-hover:text-blue-400 transition-colors">terminal</span>
+                            <span class="text-sm font-medium text-gray-300 group-hover:text-white">Python</span>
+                        </div>
+                        <div
+                            class="flex flex-col items-center justify-center p-6 bg-background-dark rounded-lg border border-white/5 hover:border-primary/30 hover:bg-white/5 transition-all group">
+                            <span
+                                class="material-symbols-outlined text-4xl mb-3 text-gray-500 group-hover:text-indigo-400 transition-colors">table_view</span>
+                            <span class="text-sm font-medium text-gray-300 group-hover:text-white">Pandas</span>
+                        </div>
+                        <div
+                            class="flex flex-col items-center justify-center p-6 bg-background-dark rounded-lg border border-white/5 hover:border-primary/30 hover:bg-white/5 transition-all group">
+                            <span
+                                class="material-symbols-outlined text-4xl mb-3 text-gray-500 group-hover:text-blue-600 transition-colors">functions</span>
+                            <span class="text-sm font-medium text-gray-300 group-hover:text-white">R Language</span>
+                        </div>
+                        <div
+                            class="flex flex-col items-center justify-center p-6 bg-background-dark rounded-lg border border-white/5 hover:border-primary/30 hover:bg-white/5 transition-all group">
+                            <span
+                                class="material-symbols-outlined text-4xl mb-3 text-gray-500 group-hover:text-yellow-500 transition-colors">cloud</span>
+                            <span class="text-sm font-medium text-gray-300 group-hover:text-white">AWS</span>
+                        </div>
+                        <div
+                            class="flex flex-col items-center justify-center p-6 bg-background-dark rounded-lg border border-white/5 hover:border-primary/30 hover:bg-white/5 transition-all group">
+                            <span
+                                class="material-symbols-outlined text-4xl mb-3 text-gray-500 group-hover:text-red-400 transition-colors">network_node</span>
+                            <span class="text-sm font-medium text-gray-300 group-hover:text-white">TensorFlow</span>
+                        </div>
+                        <div
+                            class="flex flex-col items-center justify-center p-6 bg-background-dark rounded-lg border border-white/5 hover:border-primary/30 hover:bg-white/5 transition-all group">
+                            <span
+                                class="material-symbols-outlined text-4xl mb-3 text-gray-500 group-hover:text-orange-400 transition-colors">account_tree</span>
+                            <span class="text-sm font-medium text-gray-300 group-hover:text-white">Scikit-learn</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About Me Section -->
+            <section class="py-20 px-4 md:px-8 max-w-7xl mx-auto" id="sobre-mi">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                    <!-- Image Column -->
+                    <div class="md:col-span-5 relative">
+                        <div
+                            class="aspect-[4/5] w-3/4 mx-auto rounded-2xl overflow-hidden relative bg-surface-highlight/50 border border-white/5 shadow-2xl transition-all duration-500">
+                            <div class="absolute inset-0 bg-cover bg-center" data-alt="Víctor López Martínez"
+                                style='background-image: url("assets/Foto_perfil_con_fondo_gris.png");'>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-transparent to-transparent">
+                            </div>
+                        </div>
+                        <!-- Decorative element -->
+                        <div class="absolute -bottom-6 right-10 -z-10 size-32 bg-primary/20 rounded-full blur-2xl">
+                        </div>
+                    </div>
+                    <!-- Text Column -->
+                    <div class="md:col-span-7 flex flex-col gap-6">
+                        <h2 class="text-3xl font-bold text-white tracking-tight">Más allá del código</h2>
+                        <div class="space-y-4 text-text-secondary text-lg leading-relaxed">
+                            <p>
+                                Soy Víctor López Martínez, estudiante de 4º curso de Ciencia e Ingeniería de Datos en la
+                                Universidad de Murcia. Mi pasión reside en encontrar historias ocultas en los datos
+                                para resolver problemas reales.
+                            </p>
+                            <p>
+                                Con una fuerte mentalidad emprendedora, busco aplicar algoritmos de Machine Learning e
+                                IA no solo para modelar la realidad, sino para mejorarla y generar valor tangible en el
+                                mercado.
+                            </p>
+                            <p>
+                                Actualmente estoy enfocado en profundizar mis conocimientos en Deep Learning y
+                                desarrollo de productos de datos, siempre buscando la próxima oportunidad para innovar.
+                            </p>
+                        </div>
+                        <div class="pt-4 flex gap-6">
+                            <div class="flex flex-col gap-1">
+                                <span class="text-3xl font-bold text-white">4+</span>
+                                <span class="text-xs text-text-secondary uppercase tracking-wider">Años
+                                    estudiando</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Footer / Contact -->
+            <footer class="bg-surface-dark border-t border-white/5 pt-20 pb-10 px-4" id="contacto">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-white mb-4">¿Hablamos?</h2>
+                        <p class="text-text-secondary mb-2">Estoy disponible para colaboraciones y nuevas oportunidades
+                            laborales.</p>
+                        <a href="mailto:victorlopez.workspace@gmail.com"
+                            class="text-primary hover:text-white transition-colors text-lg font-medium">victorlopez.workspace@gmail.com</a>
+                    </div>
+                    <!-- Contact Form -->
+                    <form class="max-w-lg mx-auto flex flex-col gap-4 mb-16">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex flex-col gap-2">
+                                <label class="text-xs font-semibold text-text-secondary uppercase"
+                                    for="name">Nombre</label>
+                                <input
+                                    class="bg-background-dark border border-white/10 rounded-lg p-3 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-white/20"
+                                    id="name" placeholder="Tu nombre" type="text" />
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <label class="text-xs font-semibold text-text-secondary uppercase"
+                                    for="email">Email</label>
+                                <input
+                                    class="bg-background-dark border border-white/10 rounded-lg p-3 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-white/20"
+                                    id="email" placeholder="correo@ejemplo.com" type="email" />
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-xs font-semibold text-text-secondary uppercase"
+                                for="message">Mensaje</label>
+                            <textarea
+                                class="bg-background-dark border border-white/10 rounded-lg p-3 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none placeholder:text-white/20"
+                                id="message" placeholder="Cuéntame sobre tu proyecto..." rows="4"></textarea>
+                        </div>
+                        <button
+                            class="mt-2 bg-white text-black font-bold py-3 px-6 rounded-lg hover:bg-gray-200 transition-colors"
+                            type="button">
+                            Enviar Mensaje
+                        </button>
+                    </form>
+                    <!-- Links -->
+                    <div
+                        class="flex flex-col md:flex-row items-center justify-between border-t border-white/5 pt-8 gap-4">
+                        <div class="text-sm text-text-secondary">
+                            © 2024 DS Portfolio. Todos los derechos reservados.
+                        </div>
+                        <div class="flex gap-6">
+                            <a class="text-text-secondary hover:text-white transition-colors flex items-center gap-2"
+                                href="https://www.linkedin.com/in/victor-lopez-martinez-96731131a/" target="_blank">
+                                <span class="text-sm font-medium">LinkedIn</span>
+                                <span class="material-symbols-outlined text-sm">arrow_outward</span>
+                            </a>
+                            <a class="text-text-secondary hover:text-white transition-colors flex items-center gap-2"
+                                href="https://github.com/victorlopez-ds" target="_blank">
+                                <span class="text-sm font-medium">GitHub</span>
+                                <span class="material-symbols-outlined text-sm">arrow_outward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+</body>
+
+</html>
